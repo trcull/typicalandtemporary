@@ -1,0 +1,47 @@
+GETTING_STARTED
+
+* Install Git
+
+* Install Ruby/RVM
+
+* Install Postgres
+- If you have postgres root password problems
+http://linuxadminzone.com/recover-or-reset-root-password-of-mysql-and-postgresql-servers/
+
+- Be sure to escape any $ signs in your strings with a backslash
+
+- psql -U postgres -c "CREATE DATABASE rfengine_development"
+- psql -U postgres -c "CREATE DATABASE rfengine_test"
+
+see: http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
+#these might be optional
+sudo adduser rfengine
+sudo passwd rfengine
+psql -U postgres -c "CREATE USER rfengine with password 'fightchurn'"
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE rfengine_development to rfengine"
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE rfengine_test to rfengine"
+
+* Run 'bundle install'
+
+* Run 'rake db:migrate'
+
+* Run 'rake'
+  
+* Install Aptana Studio 3
+
+* Install heroku toolbelt (https://toolbelt.heroku.com/osx)
+
+* Connect with heroku
+https://devcenter.heroku.com/articles/keys
+git remote add heroku git@heroku.com:retention-factory-engine.git
+
+http://stackoverflow.com/questions/2786062/how-can-i-pull-an-existing-heroku-app-to-new-location-for-development
+
+
+
+* Make sure you can get to tddium
+
+try starting local:
+./dev-start.sh
+
+
