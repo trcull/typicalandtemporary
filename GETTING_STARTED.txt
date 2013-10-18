@@ -10,22 +10,20 @@ http://linuxadminzone.com/recover-or-reset-root-password-of-mysql-and-postgresql
 
 - Be sure to escape any $ signs in your strings with a backslash
 
-- psql -U postgres -c "CREATE DATABASE rfengine_development"
-- psql -U postgres -c "CREATE DATABASE rfengine_test"
-
 see: http://www.cyberciti.biz/faq/howto-add-postgresql-user-account/
 #these might be optional
 sudo adduser rfengine
 sudo passwd rfengine
-psql -U postgres -c "CREATE USER rfengine with password 'fightchurn'"
-psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE rfengine_development to rfengine"
-psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE rfengine_test to rfengine"
+psql -U postgres -c "DROP USER rfengine"
+psql -U postgres -c "CREATE USER rfengine with createdb password 'fightchurn'"
 
 * Run 'bundle install'
 
-* Run 'rake db:migrate'
+* Run 'bundle exec rake db:create'
 
-* Run 'rake'
+* Run 'bundle exec rake db:migrate'
+
+* Run 'bundle exec rake'
   
 * Install Aptana Studio 3
 

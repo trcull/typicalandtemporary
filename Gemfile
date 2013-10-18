@@ -13,6 +13,12 @@ gem 'delayed_job_active_record'
 gem 'redis'
 gem 'redis-namespace'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'forgery'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -41,6 +47,8 @@ end
 
 #required by Heroku
 gem 'rails_12factor', group: :production
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
