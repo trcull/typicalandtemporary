@@ -10,7 +10,7 @@ class Api::V1::OrdersController < Api::V1::ApiController
       p.organization = rv.organization
       p.org_id = params[:product][:org_id]
       p.name = params[:product][:name] || "Unknown Product"
-      p.org_created_at = params[:product][:org_created_at] || DateTime.now
+      p.org_created_at = params[:product][:org_created_at] || Time.now
     end
     
     rv.customer = Customer.find_or_initialize_by(:organization_id=> rv.organization.id, :org_id=>params[:customer][:org_id]) do |c|
@@ -27,9 +27,9 @@ class Api::V1::OrdersController < Api::V1::ApiController
     
     
     if rv.save
-      render json: rv.as_json
+      render json: rv
     else
-      render json: rv.errors
+      render json: rv.errors, status: :unprocessable_entity
     end
   end
 end

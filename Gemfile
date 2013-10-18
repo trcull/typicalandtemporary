@@ -19,6 +19,8 @@ group :development, :test do
   gem 'forgery'
 end
 
+gem "active_model_serializers"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
