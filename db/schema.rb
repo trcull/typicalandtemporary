@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017235434) do
+ActiveRecord::Schema.define(version: 20131018212547) do
 
   create_table "contact_preferences", force: true do |t|
     t.integer  "customer_id",         null: false
@@ -74,6 +74,35 @@ ActiveRecord::Schema.define(version: 20131017235434) do
     t.string   "name"
     t.datetime "org_created_at",  null: false
     t.integer  "organization_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "site_accounts", force: true do |t|
+    t.string   "type",             default: "SiteAccount", null: false
+    t.integer  "site_id",                                  null: false
+    t.integer  "user_id",                                  null: false
+    t.integer  "organization_id",                          null: false
+    t.string   "name",                                     null: false
+    t.string   "site_user_id"
+    t.string   "encrypted_token"
+    t.string   "encrypted_secret"
+    t.string   "encrypted_field1"
+    t.string   "encrypted_field2"
+    t.string   "encrypted_field3"
+    t.string   "encrypted_field4"
+    t.string   "encrypted_field5"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "site_accounts", ["organization_id", "user_id"], name: "index_site_accounts_on_organization_id_and_user_id", using: :btree
+  add_index "site_accounts", ["site_id"], name: "index_site_accounts_on_site_id", using: :btree
+
+  create_table "sites", force: true do |t|
+    t.string   "key",                       null: false
+    t.string   "name",                      null: false
+    t.boolean  "active",     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
