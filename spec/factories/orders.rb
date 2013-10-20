@@ -6,7 +6,6 @@ FactoryGirl.define do
     subtotal 11.33
     total 12.45
     organization
-    product
     customer
   end
 end

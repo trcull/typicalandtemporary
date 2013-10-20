@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018212547) do
+ActiveRecord::Schema.define(version: 20131019000824) do
 
   create_table "contact_preferences", force: true do |t|
     t.integer  "customer_id",         null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20131018212547) do
     t.string   "org_id",          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "org_created_at"
   end
 
   create_table "order_lines", force: true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20131018212547) do
     t.float   "price",              null: false
     t.float   "tax_rate"
     t.float   "additional_charges"
+    t.integer "product_id",         null: false
   end
 
   create_table "orders", force: true do |t|
@@ -56,7 +58,6 @@ ActiveRecord::Schema.define(version: 20131018212547) do
     t.float    "subtotal",        null: false
     t.float    "total",           null: false
     t.integer  "organization_id", null: false
-    t.integer  "product_id",      null: false
     t.integer  "customer_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"

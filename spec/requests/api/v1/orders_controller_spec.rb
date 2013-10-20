@@ -5,9 +5,6 @@ describe Api::V1::OrdersController do
   
   it "doesn't explode" do
     order = FactoryGirl.attributes_for(:order)
-    order[:product] = {
-      :org_id => generate(:org_id)
-    }
     order[:customer] = {
       :org_id => generate(:org_id)
     }

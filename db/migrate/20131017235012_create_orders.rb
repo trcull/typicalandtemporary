@@ -6,7 +6,6 @@ class CreateOrders < ActiveRecord::Migration
       t.float :subtotal, :null=>false
       t.float :total, :null=>false
       t.integer :organization_id, :null=>false
-      t.integer :product_id, :null=>false
       t.integer :customer_id, :null=>false
       t.timestamps
     end
@@ -17,6 +16,7 @@ class CreateOrders < ActiveRecord::Migration
       t.float :price, :null=>false
       t.float :tax_rate, :null=>true
       t.float :additional_charges, :null=>true
+      t.integer :product_id, :null=>false
     end
   end
 end
