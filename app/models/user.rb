@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     
+  has_many :user_organizations
+  has_many :organizations, :through=>:user_organizations
+
   def current_organization
-    c = Organization.new 
-    c.name = 'fake'
-    c.admin_user_id = 1
-    c 
+    self.organizations.first
   end
   
   #convenience method for showing what we commonly want to show in logs for a user

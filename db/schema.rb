@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20131021171334) do
   end
 
   add_index "order_lines", ["order_id", "product_id"], name: "index_order_lines_on_order_id_and_product_id", unique: true, using: :btree
+  add_index "order_lines", ["order_id"], name: "index_order_lines_on_order_id", using: :btree
   add_index "order_lines", ["product_id", "order_id"], name: "index_order_lines_on_product_id_and_order_id", unique: true, using: :btree
 
   create_table "orders", force: true do |t|
@@ -86,7 +87,7 @@ ActiveRecord::Schema.define(version: 20131021171334) do
     t.integer  "num_previous_purchases"
   end
 
-  add_index "orders", ["customer_id", "organization_id"], name: "index_orders_on_customer_id_and_organization_id", using: :btree
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
   add_index "orders", ["org_created_at", "organization_id"], name: "index_orders_on_org_created_at_and_organization_id", using: :btree
   add_index "orders", ["org_id", "organization_id"], name: "index_orders_on_org_id_and_organization_id", unique: true, using: :btree
   add_index "orders", ["organization_id"], name: "index_orders_on_organization_id", using: :btree

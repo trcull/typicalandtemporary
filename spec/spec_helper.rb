@@ -7,6 +7,7 @@ require 'rspec/autorun'
 require 'custom_helper'
 #this is our own shared custom matchers
 require 'custom_matchers'
+require_relative '../db/seeds.rb' 
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

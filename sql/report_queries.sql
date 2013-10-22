@@ -30,6 +30,7 @@ next_previous_order_id = (select max(o_s.id) as order_id
  num_previous_purchases = (select count(1) from orders o_s where o_s.org_created_at < o.org_created_at and o_s.customer_id = o.customer_id),
  from customers c
 where 
+ o.next_previous_order_id is null
  o.customer_id = c.id;
 
 insert into customer_cohort_schemes (name) values ('year-month');
