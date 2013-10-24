@@ -35,7 +35,7 @@ module RetentionfactoryEngine
     
     
   config.assets.initialize_on_precompile = false
-  config.assets.precompile += %w( )
+  config.assets.precompile += %w(  )
   #TODO
   #ENV['SSL_CERT_FILE'] = File.join(File.dirname(__FILE__),"curl_cacert.pem")
     
