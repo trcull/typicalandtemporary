@@ -18,8 +18,73 @@
   
 </head>
 <body>
-<div class="container">
+	<div class="navbar navbar-default">
+          	<div class="navbar-header">
+	          	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse-02"></button>
+              <a href="#fakelink" class="navbar-brand fui-flat"></a>
+          	</div>
+            <%= yield :nav_bar%>
+            <div class="navbar-collapse collapse navbar-collapse-02">
+              <ul class="nav navbar-nav navbar-right">
+                    <% if current_user.present? %>
+	                  <li>
+	                    <a href="#fakelink">
+	                      <span class="fui-mail"></span><span class="hidden-lg">Messages</span>
+	                      <span class="navbar-new">1</span>
+	                    </a>
+	                  </li>
+                    	<li><a href="/users/edit" method="delete">Account</a></li>
+                    	<li class="divider"></li>
+                    	<li>
+    	            		<%= link_to 'Logout',destroy_user_session_path, method: 'delete'%>
+                    	</li>
+                    <% else %>
+	                	<li><%= link_to 'Login',new_user_session_path %></li>
+                    <% end %>
+                </ul> <!-- /nav -->
+            </div><!--/.navbar-collapse -->
+    </div>
+    <% if flash.count > 0 || @should_show_dialog %>      
+	<div class="dialog">
+	    <%= yield :message_dialog %>
+	    <% message_count = 0%>
+		<% flash.each do |key, value| %>
+	        <% if message_count > 0 %>
+				<br/>	        
+	        <% end %>
+        	<div class="flash <%= key %>"><%= value %></div>
+	        <% message_count += 1 %>
+        <% end %>	    
+	</div>
+	<% end %>              	
+
+<div class="container" style="min-height: 640px;">
 <%= yield %>
+
+</div>
+
+<div class="bottom-menu">
+  <div class="container">
+<div class="row">
+          <div class="col-md-2 navbar-brand">
+            <a href="#fakelink" class="fui-flat"></a>
+          </div>
+
+          <div class="col-md-8">
+            <ul class="bottom-links">
+              <li><a href="#fakelink">About Us</a></li>
+              <li><a href="#fakelink">Support</a></li>
+              <li><a href="#fakelink">Privacy</a></li>
+              <li><a href="#fakelink">Terms</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2">
+            <ul class="bottom-icons">
+              <li><a href="#fakelink" class="fui-twitter"></a></li>
+            </ul>
+          </div>
+        </div>  </div>
 </div>
 
     <script src="https://s3.amazonaws.com/fv-assets/flatui/js/jquery-ui-1.10.3.custom.min.js"></script>
