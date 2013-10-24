@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+.headline-row h3 {
+	display:inline-block;
+}
+
+.headline-row a {
+	display:inline;
+	margin-left:10px;
+}

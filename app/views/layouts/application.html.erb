@@ -5,6 +5,16 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <link href="https://s3.amazonaws.com/fv-assets/flatui/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <link href="https://s3.amazonaws.com/fv-assets/flatui/css/flat-ui.css" rel="stylesheet"></link>
+    <% if @include_angular %>
+    <script src="https://s3.amazonaws.com/fv-assets/angular/angular.min.js"></script>
+    <% end %>
+	<script type="application/javascript">
+		logged_in = <%= current_user.nil? ? "false" : "true" %>;
+		<% if current_user.present? %>
+			logged_in_user_id = <%= current_user.id %>;
+			organization_id = <%= session[:organization_id].nil? ? current_user.current_organization.id : session[:organization_id] %>;
+		<% end %>
+	</script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -29,8 +39,8 @@
                     <% if current_user.present? %>
 	                  <li>
 	                    <a href="#fakelink">
-	                      <span class="fui-mail"></span><span class="hidden-lg">Messages</span>
-	                      <span class="navbar-new">1</span>
+	                      <span class="fui-mail visible-lg visible-md"></span><span class="hidden-lg hidden-md">Messages</span>
+	                      <span class="navbar-new visible-lg visible-md">1</span>
 	                    </a>
 	                  </li>
                     	<li><a href="/users/edit" method="delete">Account</a></li>

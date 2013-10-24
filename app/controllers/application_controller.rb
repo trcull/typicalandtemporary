@@ -17,28 +17,10 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end  
 
-  def site_account_belongs_to_logged_in_user!
-    rv = true
-    @site_account = SiteAccount.find params[:site_account_id]
-    if @site_account.nil?
-      puts "site account not found: #{params[:site_account_id]}"
-      render :status=>404, :json=> {:errors=>"account not found: #{params[:site_account_id]}"}.to_json
-      rv = false
-    end
-    if @site_account.user.id != current_user.id
-      puts "site account doesn't belong to user: #{params[:site_account_id]}"
-      render :status=>403, :json=> {:errors=>"you don't have access to this account"}.to_json
-      rv = false
-    end
-    rv
-  end
-
   def logged_in_user_belongs_to_organization!
     rv = true
     organization_id = params[:organization_id]
     organization_id ||= session[:organization_id]
-    puts current_user.inspect
-    puts current_user.organizations.inspect
     if organization_id.nil?
       render :status=>400, :json=> {:errors=>"missing organization_id parameter"}.to_json
       rv = false

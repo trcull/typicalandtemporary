@@ -15,7 +15,7 @@ class CreatePurchaseSequences < ActiveRecord::Migration
       end
       
       begin
-        execute "drop view follow_on_purchases;"
+        #execute "drop view follow_on_purchases;"
       rescue
         #do nothing
       end

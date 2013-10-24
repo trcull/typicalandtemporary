@@ -1,6 +1,18 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "dashboard" %>
+<% end %>	
 
-<div class="row">
-	<h3>Repeat Purchase Rates (by Customer Age)</h3> <a class="fui-exit" href="/ecomm/#{@organization_id}/order_counts_by_customer_age">more...</a>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag "dashboard" %>
+<% end %>	
+
+
+<div class="row dashboard-headline-row">
+	<h3>Repeat Purchase Rates (by Customer Age)</h3> 
+	<a href="/ecomm/<%=@organization_id%>/repeat_purchase_rates">
+		<span class="fui-exit"></span>
+		<span class="hidden">more...</span>
+	</a>
 </div>
 
 <div class="row">
@@ -24,8 +36,11 @@
 	</div>
 </div>
 
-<div class="row">
-	<h3>Most Repeat Purchases Occur Within X Days...</h3> <a href="/ecomm/#{@organization_id}/age_at_repeat_order_histogram">more</a>
+<div class="row dashboard-headline-row">
+	<h3>Most Repeat Purchases Occur Within X Days...</h3> 
+	<a href="/ecomm/<%=@organization_id%>/repeat_purchase_ages">
+				<span class="fui-exit"></span>
+<span class="hidden">more...</span></a>
 </div>
 
 <div class="row">
@@ -50,8 +65,11 @@
 	
 </div>
 
-<div class="row">
-	<h3>Your Recent 3 Repeat Purchases</h3> <a href="#">more...</a>
+<div class="row dashboard-headline-row">
+	<h3>Your Recent 3 Repeat Purchases</h3> 
+	<a href="/ecomm/<%=@organization_id%>/recent_repeat_purchases">
+				<span class="fui-exit"></span>
+<span class="hidden">more...</span></a>
 </div>
 
 <div class="row">
@@ -93,8 +111,11 @@
         	</div>	
 </div>
 
-<div class="row">
-	<h3>Top 3 Purchase Sequences</h3> <a href="#">more...</a>
+<div class="row dashboard-headline-row">
+	<h3>Top 3 Purchase Sequences</h3> 
+	<a href="/ecomm/<%=@organization_id%>/top_purchase_sequences">
+		<span class="fui-exit"></span>
+		<span class="hidden">more...</span></a>
 </div>
 
 <div class="row">

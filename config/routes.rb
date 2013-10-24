@@ -16,9 +16,9 @@ RetentionfactoryEngine::Application.routes.draw do
   get 'dashboard' => 'dashboard#index'
   
   namespace :ecomm do
-    get 'recent_repeat_purchases' => 'repeat_purchases#recent_repeat_purchases'
-    get 'repeat_purchase_ages' => 'repeat_purchases#repeat_purchase_ages'
-    get 'repeat_purchase_rates' => 'repeat_purchases#repeat_purchase_rates'
-    get 'top_purchase_sequences' => 'repeat_purchases#top_purchase_sequences'
+    get ':organization_id/recent_repeat_purchases' => 'repeat_purchases#recent_repeat_purchases'
+    get ':organization_id/repeat_purchase_ages' => 'repeat_purchases#repeat_purchase_ages'
+    get ':organization_id/repeat_purchase_rates' => 'repeat_purchases#repeat_purchase_rates'
+    get ':organization_id/top_purchase_sequences' => 'repeat_purchases#top_purchase_sequences'
   end
 end

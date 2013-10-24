@@ -30,7 +30,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
       pct = row[1].to_f/total_orders
       rv[:pct_orders][row[0].to_i] = pct
       pct_so_far += pct
-      rv[:pct_cumulative] = pct_so_far
+      rv[:pct_cumulative][row[0].to_i] = pct_so_far
       rv[:num_orders][row[0].to_i] = row[1].to_i
     }
     render :json => rv.to_json
@@ -83,7 +83,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
       pct_so_far += pct
       rv[:pct_customers][row[0].to_i-1] = pct
       rv[:num_customers][row[0].to_i-1] = row[1].to_i
-      rv[:pct_cumulative] = pct_so_far
+      rv[:pct_cumulative][row[0].to_i] = pct_so_far
     }
     render :json => rv.to_json
   end
@@ -124,7 +124,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
       pct = row[2].to_f/order_counts_by_purchase_number[num_prev_purchases]
       pct_orders_series[num_prev_purchases] << [row[1].to_i, pct]
       cumulative_by_num_purchases[num_prev_purchases] = cumulative_by_num_purchases[num_prev_purchases] + pct
-      cumulative_pct_series[num_prev_purchases] << cumulative_by_num_purchases[num_prev_purchases]
+      cumulative_pct_series[num_prev_purchases] << [row[1].to_i,cumulative_by_num_purchases[num_prev_purchases]]
     end
     rv[:num_customers] = num_orders_series
     rv[:pct_cumulative] = cumulative_pct_series
