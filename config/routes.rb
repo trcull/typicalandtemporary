@@ -12,4 +12,13 @@ RetentionfactoryEngine::Application.routes.draw do
       get 'rollups/index' => 'rollups#index'
     end
   end
+  
+  get 'dashboard' => 'dashboard#index'
+  
+  namespace :ecomm do
+    get 'recent_repeat_purchases' => 'repeat_purchases#recent_repeat_purchases'
+    get 'repeat_purchase_ages' => 'repeat_purchases#repeat_purchase_ages'
+    get 'repeat_purchase_rates' => 'repeat_purchases#repeat_purchase_rates'
+    get 'top_purchase_sequences' => 'repeat_purchases#top_purchase_sequences'
+  end
 end
