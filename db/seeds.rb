@@ -24,5 +24,9 @@ end
     o.admin_user_id = me.id
     o.save!
   end
+  if me.organizations.select {|o2| o2.id == o.id}.first.nil?
+    me.organizations << o 
+    me.save!
+  end
 end
 
