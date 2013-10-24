@@ -1,0 +1,355 @@
+<mockup version="1.0" skin="sketch" measuredW="1766" measuredH="1205" mockupW="1737" mockupH="1184">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="29" y="21" w="472" h="468" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="68" y="299" w="-1" h="-1" measuredW="203" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Your%20Recent%203%20Repeat%20Purchases</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="68" y="54" w="-1" h="-1" measuredW="260" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Repeat%20Purchase%20Rates%20%28by%20Customer%20Age%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="75" y="90" w="-1" h="-1" measuredW="51" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>All%20Time</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="222" y="90" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%206%20mo.</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="366" y="90" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%2030%20days</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="68" y="179" w="-1" h="-1" measuredW="270" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Most%20Repeat%20Purchases%20Occur%20Within%20%28in%20Days%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="66" y="118" w="69" h="46" measuredW="69" measuredH="37" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>34%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="222" y="114" w="69" h="46" measuredW="68" measuredH="37" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>36%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="372" y="118" w="69" h="46" measuredW="67" measuredH="37" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>25%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="68" y="209" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Average</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="75" y="238" w="44" h="46" measuredW="41" measuredH="37" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>32</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="220" y="209" w="-1" h="-1" measuredW="72" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1st%20Quartile</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="202" y="238" w="108" h="46" measuredW="102" measuredH="37" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>30%20-%2045</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="386" y="209" w="-1" h="-1" measuredW="29" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Max</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="366" y="237" w="69" h="46" measuredW="58" measuredH="37" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>277</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Icon" x="347" y="181" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Icon" x="347" y="56" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="68" y="393" w="-1" h="-1" measuredW="166" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Top%203%20Purchase%20Sequences</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Icon" x="347" y="301" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Icon" x="347" y="395" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::DataGrid" x="67" y="327" w="395" h="58" measuredW="300" measuredH="69" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>16</rowHeight>
+        <size>10</size>
+        <text>Name%2C%20Customer%20Age%20%28days%29%2C%20Products%20%0AGiacomo%20Guilizzoni%2C%2036%2C%20Tomatoes%20Garlic%0AMarco%20Botton%2C%2034%2C%20Cucumber%0AMariah%20Maclachlan%2C%2037%2C%20Lettuce%20Mix</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::DataGrid" x="68" y="414" w="395" h="58" measuredW="130" measuredH="69" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>16</rowHeight>
+        <size>10</size>
+        <text>Product%201%2C%20Product%202%20%0ATomatoes%2C%20Garlic%0ALettuce%2C%20Cucumber%0ATomatoes%2C%20Lettuce%20Mix</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="599" y="200" w="472" h="468" measuredW="100" measuredH="70" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="631" y="222" w="-1" h="-1" measuredW="270" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Most%20Repeat%20Purchases%20Occur%20Within%20%28in%20Days%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Label" x="631" y="252" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Average</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Label" x="638" y="281" w="44" h="46" measuredW="41" measuredH="37" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>32</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Label" x="783" y="252" w="-1" h="-1" measuredW="72" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1st%20Quartile</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Label" x="765" y="281" w="108" h="46" measuredW="102" measuredH="37" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>30%20-%2045</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="949" y="252" w="-1" h="-1" measuredW="29" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Max</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Label" x="929" y="280" w="69" h="46" measuredW="58" measuredH="37" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>277</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Icon" x="910" y="224" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Canvas" x="1123" y="27" w="472" h="468" measuredW="100" measuredH="70" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="1162" y="60" w="-1" h="-1" measuredW="260" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Repeat%20Purchase%20Rates%20%28by%20Customer%20Age%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="1169" y="108" w="-1" h="-1" measuredW="51" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>All%20Time</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Label" x="1316" y="110" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%206%20mo.</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Label" x="1460" y="110" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Last%2030%20days</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Label" x="1160" y="136" w="69" h="46" measuredW="69" measuredH="37" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>34%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="1316" y="138" w="69" h="46" measuredW="68" measuredH="37" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>36%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="1466" y="138" w="69" h="46" measuredW="67" measuredH="37" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>25%25</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Icon" x="1441" y="62" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>JumpOutIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Canvas" x="29" y="668" w="472" h="468" measuredW="100" measuredH="70" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Label" x="56" y="687" w="-1" h="-1" measuredW="153" measuredH="21" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Top%20Purchase%20Sequences</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::DataGrid" x="56" y="723" w="406" h="313" measuredW="130" measuredH="69" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>16</rowHeight>
+        <size>10</size>
+        <text>Product%201%2C%20Product%202%20%0ATomatoes%2C%20Garlic%0ALettuce%2C%20Cucumber%0ATomatoes%2C%20Lettuce%20Mix</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Canvas" x="599" y="737" w="472" h="468" measuredW="100" measuredH="70" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Label" x="631" y="761" w="-1" h="-1" measuredW="191" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Your%20Recent%20Repeat%20Purchases</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::DataGrid" x="638" y="789" w="395" h="377" measuredW="300" measuredH="69" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>16</rowHeight>
+        <size>10</size>
+        <text>Name%2C%20Customer%20Age%20%28days%29%2C%20Products%20%0AGiacomo%20Guilizzoni%2C%2036%2C%20Tomatoes%20Garlic%0AMarco%20Botton%2C%2034%2C%20Cucumber%0AMariah%20Maclachlan%2C%2037%2C%20Lettuce%20Mix</text>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::Arrow" x="372" y="59" w="751" h="37" measuredW="150" measuredH="100" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::Arrow" x="369" y="187" w="230" h="51" measuredW="150" measuredH="100" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::Arrow" x="372" y="310" w="244" h="427" measuredW="150" measuredH="100" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::Arrow" x="364" y="409" w="86" h="259" measuredW="150" measuredH="100" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::LineChart" x="1161" y="224" w="405" h="233" measuredW="187" measuredH="175" zOrder="51" locked="false" isInGroup="-1"/>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::Label" x="1292" y="193" w="-1" h="-1" measuredW="146" measuredH="21" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Distribution%20of%20Purchases</text>
+      </controlProperties>
+    </control>
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::Label" x="1286" y="461" w="-1" h="-1" measuredW="130" measuredH="21" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Number%20of%20Purchases</text>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Label" x="1127" y="255" w="-1" h="-1" measuredW="133" measuredH="21" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Number%20of%20Customers</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Label" x="1441" y="195" w="-1" h="-1" measuredW="66" measuredH="17" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>%28what%20is%20this%3F%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="125" controlTypeID="com.balsamiq.mockups::CallOut" x="1514" y="168" w="-1" h="-1" measuredW="252" measuredH="43" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>clicking%20slides%20down%20a%20documentation%20div</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::LineChart" x="631" y="385" w="405" h="233" measuredW="187" measuredH="175" zOrder="57" locked="false" isInGroup="-1"/>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="705" y="346" w="-1" h="-1" measuredW="239" measuredH="21" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customer%20Age%20At%20First%20Repeat%20Purchase</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Label" x="949" y="348" w="-1" h="-1" measuredW="66" measuredH="17" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>%28what%20is%20this%3F%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Label" x="754" y="626" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customer%20Age%20in%20Days</text>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="616" y="457" w="-1" h="-1" measuredW="230" measuredH="21" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%25%20all%20customers%20/%20%25%20repeat%20customers</text>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::Label" x="209" y="689" w="-1" h="-1" measuredW="66" measuredH="17" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>%28what%20is%20this%3F%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="1162" y="81" w="-1" h="-1" measuredW="217" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tell%20me%20how%20to%20improve%20these%20rates%21</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::CallOut" x="1384" y="81" w="-1" h="-1" measuredW="124" measuredH="39" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20the%20upsell</text>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::CallOut" x="119" y="517" w="-1" h="-1" measuredW="293" measuredH="43" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Make%20purchase%20sequences%20a%20premium%20feature</text>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::CallOut" x="501" y="81" w="287" h="88" measuredW="287" measuredH="40" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>third%20or%20fourth%20time%20visiting%20the%20home%20page%2C%20%0Aput%20up%20a%20pop%20up%20of%20%22tell%20me%20how%20I%20can%20improve%0A%20these%20rates%21%22.%20%20Do%20it%20every%20time%20until%20they%20%0Aupgrade%20or%20leave.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

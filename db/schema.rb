@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021171334) do
+ActiveRecord::Schema.define(version: 20131023231447) do
 
   create_table "contact_preferences", force: true do |t|
     t.integer  "customer_id",         null: false
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(version: 20131021171334) do
   add_index "customers", ["org_created_at", "organization_id"], name: "index_customers_on_org_created_at_and_organization_id", using: :btree
   add_index "customers", ["org_id", "organization_id"], name: "index_customers_on_org_id_and_organization_id", unique: true, using: :btree
   add_index "customers", ["organization_id"], name: "index_customers_on_organization_id", using: :btree
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "order_lines", force: true do |t|
     t.integer "order_id",           null: false
@@ -110,6 +126,19 @@ ActiveRecord::Schema.define(version: 20131021171334) do
 
   add_index "products", ["org_id", "organization_id"], name: "index_products_on_org_id_and_organization_id", unique: true, using: :btree
   add_index "products", ["organization_id"], name: "index_products_on_organization_id", using: :btree
+
+  create_table "purchase_sequences", force: true do |t|
+    t.float   "net_score"
+    t.float   "product1_score"
+    t.float   "product2_score"
+    t.integer "product_sequence_count"
+    t.integer "product1_id"
+    t.float   "product1_avg_customer_age"
+    t.float   "product1_avg_num_prev_purchases"
+    t.integer "product2_id"
+    t.float   "product2_avg_customer_age"
+    t.float   "product2_avg_num_prev_purchases"
+  end
 
   create_table "site_accounts", force: true do |t|
     t.string   "type",             default: "SiteAccount", null: false

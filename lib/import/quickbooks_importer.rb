@@ -12,7 +12,7 @@ class Import::QuickbooksImporter < Import::AbstractImporter
   end
   
   def time_format
-    "%m/%d/%Y"
+    "%m/%d/%y"
   end
   
   def encoding

@@ -13,6 +13,7 @@ class Import::AbstractImporter
       :item_price=>[-1,0],
       :customer_email=>[-1,'unk'],
       :customer_org_created_at=>[-1,Time.now.strftime(time_format)],
+      :customer_age=>[-1,nil],
       :order_total=>[-1,0],
       :order_subtotal=>[-1,0],
       :item_qty=>[-1,1]
@@ -88,7 +89,6 @@ class Import::AbstractImporter
   def load_row(row)
     Order.transaction do 
       order_id = v(row,:order_org_id)
-      puts order_id
       rv = Order.find_or_initialize_by(:organization_id=>@organization.id, :org_id=>order_id) do |rv|
         rv.org_id = order_id
         rv.organization = @organization
@@ -98,7 +98,10 @@ class Import::AbstractImporter
           c.email = v(row,:customer_email)
           c.org_id = v(row,:customer_org_id)
           c.org_created_at = dt(row,:customer_org_created_at)
+          c.save!
         end
+        
+        rv.customer_age = v(row, :customer_age)
         
         #TODO calculate from order line items
         rv.subtotal = v(row, :order_subtotal)

@@ -9,6 +9,7 @@ RetentionfactoryEngine::Application.routes.draw do
       get 'rollups/:organization_id/order_counts_by_customer_age'=> 'rollups#order_counts_by_customer_age'
       get 'rollups/:organization_id/order_count_histogram'=> 'rollups#order_count_histogram'
       get 'rollups/:organization_id/age_at_repeat_order_histogram'=> 'rollups#age_at_repeat_order_histogram'
+      get 'rollups/index' => 'rollups#index'
     end
   end
 end

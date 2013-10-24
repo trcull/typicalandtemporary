@@ -37,6 +37,8 @@ class ApplicationController < ActionController::Base
     rv = true
     organization_id = params[:organization_id]
     organization_id ||= session[:organization_id]
+    puts current_user.inspect
+    puts current_user.organizations.inspect
     if organization_id.nil?
       render :status=>400, :json=> {:errors=>"missing organization_id parameter"}.to_json
       rv = false

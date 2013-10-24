@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.connection.execute "insert into customer_cohort_schemes (name) values ('year-month');"
+CustomerCohortScheme.find_or_initialize_by(:name=>'year-month').save!
 
 me = User.where(:email=>'trcull@pollen.io').first
 if me.nil?
@@ -17,7 +17,7 @@ if me.nil?
 end
 
 ['Pollen','Lolitagirl','Rafter','Slideshop'].each do |name|
-  o = Organization.where(:name=>name)
+  o = Organization.where(:name=>name).first
   if o.nil?
     o = Organization.new
     o.name = name
