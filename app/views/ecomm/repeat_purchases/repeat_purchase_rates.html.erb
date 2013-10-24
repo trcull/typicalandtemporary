@@ -9,4 +9,4 @@ order_counts_by_customer_age = function (div, rv) {
 };
 </script>
 
-<%= render partial: "/common/num_pct_cumulative_graph", locals: {data_url: "/api/v1/rollups/#{@organization_id}/order_counts_by_customer_age", success_function_name: 'order_counts_by_customer_age'}%>
+<%= render partial: "/common/num_pct_cumulative_graph", locals: {data_url: "/api/v1/rollups/#{current_user.current_organization.id}/order_counts_by_customer_age", success_function_name: 'order_counts_by_customer_age'}%>

@@ -8,4 +8,4 @@ age_at_repeat_order_histogram = function (div, rv) {
 };
 </script>
 
-<%= render partial: "/common/num_pct_cumulative_graph", locals: {data_url: "/api/v1/rollups/#{@organization_id}/age_at_repeat_order_histogram", success_function_name: 'age_at_repeat_order_histogram'}%>
+<%= render partial: "/common/num_pct_cumulative_graph", locals: {data_url: "/api/v1/rollups/#{current_user.current_organization.id}/age_at_repeat_order_histogram", success_function_name: 'age_at_repeat_order_histogram'}%>

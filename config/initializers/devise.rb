@@ -256,3 +256,12 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
+
+
+Warden::Manager.after_authentication do |user,auth,opts|
+  #TODO be smart about storing the user's last active session
+  if auth.session[:organization_id].nil?
+    auth.session[:organization_id] = user.current_organization
+  end
+  
+end

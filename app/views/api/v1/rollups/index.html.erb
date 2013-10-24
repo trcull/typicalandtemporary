@@ -120,7 +120,7 @@ age_at_repeat_order_histogram = function (div, rv) {
 $(document).ready(function() {
 	$.jqplot.config.enablePlugins = true;
 	$.ajax({
-		url: "/api/v1/rollups/<%=@organization_id%>/age_at_repeat_order_histogram",
+		url: "/api/v1/rollups/<%=current_user.current_organization.id%>/age_at_repeat_order_histogram",
 		dataType: "json",
 		error: function() {alert("Failed to fetch graph")},
 		success: function(data, textStatus, jqXHR){

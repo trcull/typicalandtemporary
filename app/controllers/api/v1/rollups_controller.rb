@@ -17,7 +17,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
                                     inner join (select generate_series as customer_age from generate_series(0,600)) as age on age.customer_age = o.customer_age
                                     where o.organization_id = %s
                                     group by age.customer_age
-                                    order by age.customer_age asc;", @organization_id])
+                                    order by age.customer_age asc;", current_user.current_organization.id])
     stats = Order.connection.select_rows(sql)
 
     rv[:total_orders] = total_orders 
@@ -38,7 +38,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
   
   def total_order_count()
     Order.connection.select_value(
-          sanitize(["select count(1) from orders where organization_id = %s",@organization_id])).to_i
+          sanitize(["select count(1) from orders where organization_id = %s",current_user.current_organization.id])).to_i
   end
   
   def sanitize(args)
@@ -60,7 +60,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
   def order_count_histogram
     rv = {}
     total_customers = Order.connection.select_value(
-          sanitize(["select count(1) from #{orders_by_customer} oc where oc.organization_id = %s", @organization_id])).to_i
+          sanitize(["select count(1) from #{orders_by_customer} oc where oc.organization_id = %s", current_user.current_organization.id])).to_i
     rv[:total_customers] = total_customers
     stats = Order.connection.select_rows(sanitize(["select 
                                     oc.num_orders,
@@ -72,7 +72,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
                                   group by 
                                     oc.num_orders
                                   order by
-                                    oc.num_orders;", @organization_id])) 
+                                    oc.num_orders;", current_user.current_organization.id])) 
     rv[:num_orders] = stats.collect{|row| row[0]}                                
     rv[:pct_customers] = []
     rv[:pct_cumulative] = []
@@ -95,7 +95,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
     order_counts_by_purchase_number = {}
     Order.connection.select_rows(sanitize(["select o.num_previous_purchases,
                                             count(1) as num_orders from orders o where o.organization_id = ?
-                                            group by o.num_previous_purchases", @organization_id])).each do |row|
+                                            group by o.num_previous_purchases", current_user.current_organization.id])).each do |row|
     
       order_counts_by_purchase_number[row[0]] = row[1].to_i   
     end
@@ -113,7 +113,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
                                   group by
                                     o.num_previous_purchases, o.customer_age
                                   order by 
-                                    o.num_previous_purchases, o.customer_age asc;",@organization_id]))
+                                    o.num_previous_purchases, o.customer_age asc;",current_user.current_organization.id]))
     num_orders_series = Hash.new {|hash, key| hash[key] = []}
     cumulative_pct_series = Hash.new {|hash, key| hash[key] = []}
     cumulative_by_num_purchases = Hash.new {|hash, key| hash[key] = 0}
