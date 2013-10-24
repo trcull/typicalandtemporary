@@ -12,7 +12,7 @@
 		logged_in = <%= current_user.nil? ? "false" : "true" %>;
 		<% if current_user.present? %>
 			logged_in_user_id = <%= current_user.id %>;
-			organization_id = <%= session[:organization_id].nil? ? current_user.current_organization.id.id : session[:organization_id] %>;
+			organization_id = <%= current_user.current_organization.id %>;
 		<% end %>
 	</script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
