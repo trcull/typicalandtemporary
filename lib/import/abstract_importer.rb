@@ -12,7 +12,7 @@ class Import::AbstractImporter
       :product_org_created_at=>[-1,Time.now],
       :item_price=>[-1,0],
       :customer_email=>[-1,'unk'],
-      :customer_org_created_at=>[-1,Time.now],
+      :customer_org_created_at=>[-1,nil],
       :customer_age=>[-1,nil],
       :order_total=>[-1,0],
       :order_subtotal=>[-1,0],
@@ -121,7 +121,7 @@ class Import::AbstractImporter
   end
   
   def load_row(row)
-    Rails.logger.info "LOADING ROW: #{row.inspect}"
+    #Rails.logger.info "LOADING ROW: #{row.inspect}"
     Order.transaction do 
       order_id = v(row,:order_org_id)
       rv = Order.find_or_initialize_by(:organization_id=>@organization.id, :org_id=>order_id) do |rv|

@@ -19,7 +19,7 @@ class Api::V1::RollupsController < Api::V1::ApiController
                                     group by age.customer_age
                                     order by age.customer_age asc;", current_user.current_organization.id])
     stats = Order.connection.select_rows(sql)
-
+    
     rv[:total_orders] = total_orders 
     rv[:customer_ages] = stats.collect{|row| row[0]}                                
     rv[:pct_orders] = []

@@ -1,9 +1,10 @@
 <div id="graphs" class="graphs-div">
 <% content_for :javascript_includes do %>
-  <script src="https://s3.amazonaws.com/fv-assets/jqplot/jquery.jqplot.js"></script>
-  <script src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.cursor.js"></script>
-  <script src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.barRenderer.js"></script>
-  <script src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.highlighter.js"></script>
+  <script type="application/javascript" src="https://s3.amazonaws.com/fv-assets/jqplot/jquery.jqplot.js"></script>
+  <script type="application/javascript" src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.cursor.js"></script>
+  <script type="application/javascript" src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.barRenderer.js"></script>
+  <script type="application/javascript" src="https://s3.amazonaws.com/fv-assets/jqplot/plugins/jqplot.highlighter.js"></script>
+
 <% end %>	
 <% content_for :stylesheet_includes do %>
   <link href="https://s3.amazonaws.com/fv-assets/jqplot/jquery.jqplot.css" rel="stylesheet"></script>
@@ -16,9 +17,9 @@
 	<input class="btn" type="submit" id="reset-zoom-button" value="Reset Zoom"/>
 </div>
 
-<script type="text/javascript" language="JavaScript">
-(function($) { 
-    $.jqplot.DecimalToPercentageFormatter = function (format, val) { 
+<script type="application/javascript">
+
+formatAsPercent = function (format, val) { 
             if (typeof val == 'number') { 
                     val = val*100; 
             if (!format) { 
@@ -29,8 +30,7 @@
         else { 
             return String(val); 
         } 
-    }; 
-})(jQuery); 
+};
 
 draw_graph = function(div, dataSeries, seriesLabels, axisLabels, graphTitle) {
     theGraph = $.jqplot(div, 
@@ -63,7 +63,7 @@ draw_graph = function(div, dataSeries, seriesLabels, axisLabels, graphTitle) {
     				label: axisLabels[1],
     				tickOptions: {
     					showGridline: true,
-    					formatter: $.jqplot.DecimalToPercentageFormatter
+    					formatter: formatAsPercent
     				}
     			},
     			y3axis: {
@@ -71,7 +71,7 @@ draw_graph = function(div, dataSeries, seriesLabels, axisLabels, graphTitle) {
     				label: axisLabels[2],
     				tickOptions: {
     					showGridline: false,
-    					formatter: $.jqplot.DecimalToPercentageFormatter
+    					formatter: formatAsPercent
     				}
     			}
     		},
@@ -93,7 +93,7 @@ draw_graph = function(div, dataSeries, seriesLabels, axisLabels, graphTitle) {
 
 
 $(document).ready(function() {
-	$.jqplot.config.enablePlugins = true;
+	//$.jqplot.config.enablePlugins = true;
 	$.ajax({
 		url: "<%=data_url%>",
 		dataType: "json",
