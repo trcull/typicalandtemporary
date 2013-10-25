@@ -65,3 +65,6 @@ gem 'devise'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#see: https://github.com/Empact/roo.  there are other repos, but don't be fooled!
+gem 'roo'

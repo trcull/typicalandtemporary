@@ -6,64 +6,90 @@ class Import::AbstractImporter
     @columns = {
       :order_org_id=>[-1,nil],
       :customer_org_id=>[-1,nil],
-      :order_org_created_at=>[-1, Time.now.strftime(time_format)],
+      :order_org_created_at=>[-1, Time.now],
       :product_org_id=>[-1,nil],
       :product_name=>[-1,'unk'],
-      :product_org_created_at=>[-1,Time.now.strftime(time_format)],
+      :product_org_created_at=>[-1,Time.now],
       :item_price=>[-1,0],
       :customer_email=>[-1,'unk'],
-      :customer_org_created_at=>[-1,Time.now.strftime(time_format)],
+      :customer_org_created_at=>[-1,Time.now],
       :customer_age=>[-1,nil],
       :order_total=>[-1,0],
       :order_subtotal=>[-1,0],
       :item_qty=>[-1,1]
     }
+    @best_time_format = 0
     init_column_names
   end
 
-  def time_format
-    "%Y-%m-%d %H:%M:%S"
+  def self.new_importer(uploaded_file, organization)
+    file_type = guess_file_type(uploaded_file)
+    if file_type == 'csv'
+      rv = Import::CsvImporter.new(organization)
+    elsif file_type == 'xlsx' || file_type == 'xls'
+      rv = Import::ExcelImporter.new(organization) 
+    end 
+    rv
+  end
+  
+  def self.guess_file_type(uploaded_file)
+    rv = nil
+    file_name = uploaded_file.original_filename
+    Rails.logger.info "guessing file type of file #{file_name} and content type #{uploaded_file.content_type}"
+    if file_name.match /\.xls$/
+      rv = 'xls'
+    elsif file_name.match /\.csv$/
+      rv = 'csv'
+    elsif file_name.match /\.xlsx$/
+      rv = 'xlsx'
+    else
+      Rails.logger.info "couldn't guess based on file name, so guessing based on content type "
+      # try to guess based on the mime type
+      if uploaded_file.content_type.match /application\/vnd\.ms-excel/
+        rv = 'xls'
+      elsif uploaded_file.content_type.match /application\/vnd.openxmlformats-officedocument\.spreadsheetml\.sheet/
+        rv = 'xlsx'
+      end
+    end
+    #just default if we haven't figured it out.
+    rv ||= 'xlsx'
+    rv
+  end
+
+  def time_formats
+    ["%Y-%m-%d %H:%M:%S", "%m/%d/%y"]
   end
   
   def init_column_names()
     @column_names = {
       'id'=>:order_org_id,
+      'order_id'=>:order_org_id,
       'customer_id'=>:customer_org_id,
+      'cust_id'=>:customer_org_id,
       'created_at'=>:order_org_created_at,
+      'order_date'=>:order_org_created_at,
       'isbn'=>:product_org_id,
       'product_id'=>:product_org_id,
       'price'=>:item_price,
+      'quantity' => :item_qty,
       'email'=>:customer_email,
-      'date_created'=>:customer_org_created_at
+      'cust_date'=>:customer_org_created_at,
+      'date_created'=>:customer_org_created_at,
+      'customer_age'=>:customer_age,
+      'Num'=>:order_org_id,
+      'Cust id'=>:customer_org_id,
+      'Date'=>:order_org_created_at,
+      'Prod id'=>:product_org_id,
+      'Amount'=>:item_price
     }
   end
-  
-  def encoding
-    'windows-1251:utf-8'
-  end
-  
-  def import(file_path)
-    puts @column_names
-    i= 0
-    CSV.foreach(file_path, :encoding => encoding) do |row|
-      if i==0
-        scan_for_column_indexes row
-      else
-        load_row row
-      end
-      i=i+1
-      if i%1000 == 0
-        puts "Imported #{i}"
-      end
-    end
-  end
-  
+
   def scan_for_column_indexes(row)
     row.each_with_index do |val, i|
       key = @column_names[val]
       @columns[key][0] = i if key.present?
     end  
-    puts @columns.inspect
+    Rails.logger.info "Detected these column indexes: #{@columns.inspect}"
   end
   
   def v(row, key)
@@ -80,13 +106,22 @@ class Import::AbstractImporter
     s=v(row,key)
     if s.nil?
       rv = nil
+    elsif s.is_a? Time
+      rv = s
     else
-      rv = Time.strptime(s, time_format)
+      while (rv.nil?  && @best_time_format<time_formats.length) do
+        begin
+          rv = Time.strptime(s, time_formats[@best_time_format])
+        rescue
+          @best_time_format += 1
+        end
+      end
     end 
     rv 
   end
   
   def load_row(row)
+    Rails.logger.info "LOADING ROW: #{row.inspect}"
     Order.transaction do 
       order_id = v(row,:order_org_id)
       rv = Order.find_or_initialize_by(:organization_id=>@organization.id, :org_id=>order_id) do |rv|
@@ -113,7 +148,7 @@ class Import::AbstractImporter
         p.name = v(row,:product_name)
         p.org_created_at = dt(row,:product_org_created_at)
         p.save!
-        puts "New Product #{p.org_id}"
+        Rails.logger.info "New Product #{p.org_id}"
       end
         
       line = rv.order_lines.select {|l| l.product_id == product.id}.first

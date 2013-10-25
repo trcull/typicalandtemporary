@@ -37,12 +37,15 @@
             <div class="navbar-collapse collapse navbar-collapse-02">
               <ul class="nav navbar-nav navbar-right">
                     <% if current_user.present? %>
-	                  <li>
+	                  <!--<li>
 	                    <a href="#fakelink">
 	                      <span class="fui-mail visible-lg visible-md"></span><span class="hidden-lg hidden-md">Messages</span>
 	                      <span class="navbar-new visible-lg visible-md">1</span>
 	                    </a>
-	                  </li>
+	                  </li>-->
+	                  <li><a href="/dashboard">Dashboard</a></li>
+	                  <li><a href="/ecomm/upload">Upload</a></li>
+                    	<li class="divider"></li>
                     	<li><a href="/users/edit" method="delete">Account</a></li>
                     	<li class="divider"></li>
                     	<li>

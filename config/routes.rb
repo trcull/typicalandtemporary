@@ -20,5 +20,7 @@ RetentionfactoryEngine::Application.routes.draw do
     get ':organization_id/repeat_purchase_ages' => 'repeat_purchases#repeat_purchase_ages'
     get ':organization_id/repeat_purchase_rates' => 'repeat_purchases#repeat_purchase_rates'
     get ':organization_id/top_purchase_sequences' => 'repeat_purchases#top_purchase_sequences'
+    get 'upload' => 'upload#index'
+    post 'upload' => 'upload#do_upload'
   end
 end
