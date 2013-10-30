@@ -17,24 +17,4 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end  
 
-  def logged_in_user_belongs_to_organization!
-    rv = true
-    organization_id = params[:organization_id]
-    #organization_id ||= session[:organization_id]
-    organization_id ||= current_user.current_organization.id
-    if organization_id.nil?
-      render :status=>400, :json=> {:errors=>"missing organization_id parameter"}.to_json
-      rv = false
-    elsif current_user.organizations.any? {|u| u.id == organization_id.to_i}
-      session[:organization_id] = organization_id
-      current_user.current_organization = Organization.find organization_id
-      @organization_id = organization_id
-    else
-      puts "user is not part of organization: #{organization_id}"
-      render :status=>403, :json=> {:errors=>"you don't have access to this organization"}.to_json
-      rv = false
-    end
-    rv
-  end
-
 end

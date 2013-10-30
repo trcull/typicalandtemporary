@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RetentionfactoryEngine::Application.config.secret_key_base = '57573c8745b27564da7753b3e823ab3138baf037b26a2ee3dede271a3f438d2086dc9c03be006c79a732d7ab4e26d1d465693d2697613f7fa35fb94e766a1698'
+TypicalAndTemporary::Application.config.secret_key_base = '57573c8745b27564da7753b3e823ab3138baf037b26a2ee3dede271a3f438d2086dc9c03be006c79a732d7ab4e26d1d465693d2697613f7fa35fb94e766a1698'

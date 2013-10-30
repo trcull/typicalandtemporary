@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RetentionfactoryEngine::Application.load_tasks
+TypicalAndTemporary::Application.load_tasks

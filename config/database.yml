@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: rfengine_development
+  database: tandt_development
   pool: 5
-  username: rfengine
-  password: fightchurn
+  username: tandt
+  password: youarenotalone
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: rfengine_test
+  database: tandt_test
   pool: 5
-  username: rfengine
-  password: fightchurn
+  username: tandt
+  password: youarenotalone
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: rfengine_production
+  database: tandt_production
   pool: 5
-  username: rfengine
+  username: tandt
   password:

@@ -1,6 +1,6 @@
-#rvm gemset create retentionfactory
+#rvm gemset create typicalandtemporary
 rvm 1.9.3-p125
-rvm gemset use retentionfactory
+rvm gemset use typicalandtemporary
 gem env gemdir
 ruby -v
 

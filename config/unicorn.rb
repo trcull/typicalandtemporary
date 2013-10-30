@@ -10,8 +10,6 @@ before_fork do |server, worker|
   end
 
   defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
-  #defined?(Infrastructure::Cache) and Infrastructure::Cache.disconnect
-  #defined?(Infrastructure::DocStore) and Infrastructure::DocStore.disconnect
 end 
 
 after_fork do |server, worker|
@@ -20,6 +18,4 @@ after_fork do |server, worker|
   end
 
   defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
-  #defined?(Infrastructure::Cache) and Infrastructure::Cache.boot_up
-  #defined?(Infrastructure::DocStore) and Infrastructure::DocStore.boot_up
 end
