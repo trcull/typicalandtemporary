@@ -20,3 +20,20 @@
 	display:inline;
 	margin-left:10px;
 }
+
+#row {
+	padding: 10px;
+}
+
+.mystory {
+	width: 550px;
+}
+
+.profilerow, .signuprow {
+	margin-top: 60px;
+}
+
+.shinesomelight {
+	margin-right: 20px;
+}
+
