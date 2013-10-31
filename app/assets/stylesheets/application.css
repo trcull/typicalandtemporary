@@ -25,7 +25,7 @@
 	padding: 10px;
 }
 
-.mystory {
+.mystory-input {
 	width: 550px;
 }
 
@@ -38,5 +38,9 @@
 }
 
 .kathyprops {
+	font-size: 0.8em;
+}
+
+.mystory {
 	font-size: 0.8em;
 }

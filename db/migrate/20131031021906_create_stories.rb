@@ -4,6 +4,7 @@ class CreateStories < ActiveRecord::Migration
       t.string :twitter_handle, :null=>false
       t.string :my_story, :null=>false
       t.string :profile_image_url, :null=>false
+      t.timestamps
     end
   end
 end

@@ -27,7 +27,7 @@
 			<%= text_field_tag :twitter_handle, nil, :placeholder=> '@twitterhandle', :class=>'twitterhandle'%>
 		</div>
 		<div class="col-md-7">
-			<%= text_area_tag :my_story, nil, rows: 2, columns: 155, :placeholder=>"What's your story? (250 char max)", :class=>'mystory' %>
+			<%= text_area_tag :my_story, nil, rows: 2, columns: 155, :placeholder=>"What's your story? (250 char max)", :class=>'mystory-input' %>
 		</div>
 		<div class="col-md-2">
 			<%= submit_tag  'Shine some light', :class=>'btn shinesomelight btn-hg btn-primary'%>
@@ -35,98 +35,21 @@
 	<% end %>
 </div>
 
+<% @stories.in_groups_of(4) do |story_arr| %>
 <div class="row profilerow">
+	<% story_arr.each do |story|%>
 	<div class="col-md-3">
+		<% if story.present? %>
 		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		<p><img src="<%=story.profile_image_url%>" alt="@<%=story.twitter_handle%>"/></p>
+		<p>@<%=story.twitter_handle%></p>
+		<p class="mystory"><%=story.my_story%></p>
 		</div>
+		<% end %>
 	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle" class="profileimage"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
+	<%end%>
 </div>
-
-<div class="row profilerow">
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle" class="profileimage"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-</div>
-
-<div class="row profilerow">
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="profile">
-		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle" class="profileimage"/></p>
-		<p>@lorem</p>
-		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
-		</div>
-	</div>
-</div>
+<% end %>
 
 <div class="row">
 	<div class="col-md-8"></div>

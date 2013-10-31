@@ -46,14 +46,15 @@ class StoryController < ApplicationController
     user = client.user(session[:twitter_handle])
     Rails.logger.info "User #{user.screen_name}:#{user.profile_image_url_https}: #{user.inspect}"
     
-    story = Story.new
-    story.twitter_handle = user.screen_name
-    #TODO: handle case when my_story is missing from session
-    story.my_story = session[:my_story]
-    story.profile_image_url = user.profile_image_url_https
-    #TODO: handle case when Story doesn't save
-    story.save!
-    
+    Story.first_or_initialize(:twitter_handle=>user.screen_name) do |story|
+      story.twitter_handle = user.screen_name
+      #TODO: handle case when my_story is missing from session
+      story.my_story = session[:my_story]
+      story.profile_image_url = user.profile_image_url_https
+      #TODO: handle case when Story doesn't save
+      story.save!
+      story
+    end
     redirect_to '/thank_you'
   end
   

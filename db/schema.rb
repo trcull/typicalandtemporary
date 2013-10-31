@@ -59,9 +59,11 @@ ActiveRecord::Schema.define(version: 20131031021906) do
   end
 
   create_table "stories", force: true do |t|
-    t.string "twitter_handle",    null: false
-    t.string "my_story",          null: false
-    t.string "profile_image_url", null: false
+    t.string   "twitter_handle",    null: false
+    t.string   "my_story",          null: false
+    t.string   "profile_image_url", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
