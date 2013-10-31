@@ -23,6 +23,7 @@ end
 
 gem "active_model_serializers"
 
+gem 'oauth'
 gem 'twitter'
 
 # Use SCSS for stylesheets

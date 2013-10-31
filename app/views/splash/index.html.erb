@@ -6,7 +6,7 @@
 		<p>
 			30% of all technologists <a href="citation">suffer</a> from depression or some form of mental illness at one point
 			or another.  It's much more common in our industry than in the general population, and yet we
-			never really talk about it.  Teh death of Michael Schwarts started to change that, but there's
+			never really talk about it.  The death of Aaron Schwartz started to change that, but there's
 			more to be done.
 		</p><p>	
 			This site, inspired by <a href="linktotalk">@greggyb</a>'s and @patio11's talks at Business of Software 2013 is one place for us
@@ -15,14 +15,14 @@
 			courage will be rewarded with lives saved.
 		</p><p>
 			Depression is temporary.  But it doesn't seem that way when you're in the middle of it.  It's also more typical
-			than we care to admit, at least in our industry. <sup><a href="#kathyprops">*</sup>
+			than we care to admit, at least in our industry. <sup><a href="#kathyprops">*</a></sup>
 		</p>
 		
 	</div>
 </div>
 
 <div class="row signuprow">
-	<%= form_tag 'start_pledge' do  %>
+	<%= form_tag '/authorize' do  %>
 		<div class="col-md-3">
 			<%= text_field_tag :twitter_handle, nil, :placeholder=> '@twitterhandle', :class=>'twitterhandle'%>
 		</div>
@@ -30,7 +30,7 @@
 			<%= text_area_tag :my_story, nil, rows: 2, columns: 155, :placeholder=>"What's your story? (250 char max)", :class=>'mystory' %>
 		</div>
 		<div class="col-md-2">
-			<%= link_to  'Shine some light','', :class=>'btn shinesomelight btn-hg btn-primary'%>
+			<%= submit_tag  'Shine some light', :class=>'btn shinesomelight btn-hg btn-primary'%>
 		</div>
 	<% end %>
 </div>
@@ -65,3 +65,72 @@
 		</div>
 	</div>
 </div>
+
+<div class="row profilerow">
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle" class="profileimage"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row profilerow">
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="profile">
+		<p><img src="https://pbs.twimg.com/profile_images/2673827240/7112716cf581725ce3d25d0bedbed37c_bigger.png" alt="@twitterhandle" class="profileimage"/></p>
+		<p>@lorem</p>
+		<p>Lorem ipsum dolor sit amet, conesctetur adipisicing ... my 250 word story here.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8"></div>
+	<div class="col-md-4">
+		<a id="kathyprops"></a><p class="kathyprops">* Mad props to Kathy Sierra for the phrase "<a href="">typical and temporary</a>" </p>
+	</div>
+</div>	
